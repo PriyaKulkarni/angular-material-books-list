@@ -1,0 +1,34 @@
+.root-container {
+  width:  100vw;
+  height: 100vh;
+}
+
+.side-nav {
+  width: 4%;
+}
+
+.side-nav.expanded {
+  width: 18%;
+}
+
+.menu-button {
+  transition: 300ms ease-in-out;
+  transform: rotate(0deg);
+}
+
+.menu-button.rotated {
+  transform: rotate(180deg);
+}
+
+.submenu {
+  overflow-y: hidden;
+  transition: transform 300ms ease;
+  transform: scaleY(1);
+  transform-origin: top;
+  padding-left: 35px !important;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 800;
+}

@@ -1,0 +1,16 @@
+<div class="content">
+    <div fxLayout="row wrap" fxLayoutGap="20px grid">
+        <div fxFlex="50%" fxFlex.sm="100%" *ngFor="let book of books">
+            <mat-card class="mat-elevation-z2" *ngIf="book?.volumeInfo">
+                <mat-card-header>
+                    <mat-card-title>{{ book?.volumeInfo?.title }}</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <p>Authors: {{ book?.volumeInfo?.authors[0] }}</p>
+                    <p>Publisher: {{ book?.volumeInfo?.publisher }}</p>
+                    <p>Published Date: {{ book?.volumeInfo?.publishedDate }}</p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

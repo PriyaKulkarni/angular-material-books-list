@@ -1,0 +1,50 @@
+@import '~@angular/material/theming';
+
+$custom-typography: mat-typography-config(
+    $font-family: 'Nunito Sans, sans-serif',
+    $title: mat-typography-level(18px, 20px, 800),
+    $subheading-2: mat-typography-level(14px, 20px, 700),
+    $body-1: mat-typography-level(14px, 20px, 500)
+);
+@include mat-core($custom-typography);
+
+$my-app-primary: mat-palette($mat-indigo);
+$my-app-accent:  mat-palette($mat-pink, A200, A100, A400);
+$my-app-warn:    mat-palette($mat-red);
+
+$my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
+@include angular-material-theme($my-app-theme);
+
+@function my-mat-light-theme-foreground($color) {
+    @return (
+        base:              $color,
+        divider:           $black-12-opacity,
+        dividers:          $black-12-opacity,
+        disabled:          rgba($color, 0.38),
+        disabled-button:   rgba($color, 0.38),
+        disabled-text:     rgba($color, 0.38),
+        hint-text:         rgba($color, 0.38),
+        secondary-text:    rgba($color, 0.54),
+        icon:              rgba($color, 0.54),
+        icons:             rgba($color, 0.54),
+        text:              rgba(37, 17, 101, 0.94),
+        slider-min:        rgba($color, 0.87),
+        slider-off:        rgba($color, 0.26),
+        slider-off-active: rgba($color, 0.38),
+    );
+};
+$my-foreground: my-mat-light-theme-foreground(mat-color($my-app-primary, 700));
+$my-app-theme-custom: map-merge($my-app-theme, (foreground: $my-foreground));
+
+ // Include your custom theme.
+ @include angular-material-theme($my-app-theme-custom);
+  
+html, body { height: 100%; }
+body { margin: 0; }
+/* Padding of each <mat-list-item> */
+.mat-list-item-content {
+    padding: 0 5px 0 7px !important;
+}
+.mat-list-text {
+    padding-left: 3px !important; 
+}

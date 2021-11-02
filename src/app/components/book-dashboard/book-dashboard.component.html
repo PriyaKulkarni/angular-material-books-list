@@ -1,0 +1,16 @@
+<main class="dashboard-container">
+    <div fxLayout="row" fxLayoutAlign="space-between">
+            <h1><b>Books</b></h1>
+            <button mat-flat-button color="primary" fxFlexAlign="center">Create New Book</button>
+    </div>
+
+    <mat-form-field>
+        <button mat-button matPrefix mat-icon-button>
+            <mat-icon>search</mat-icon>
+        </button>
+        <input matInput type="text" placeholder="Search" autocomplete="off" (keyup)="search($event.target.value)">
+    </mat-form-field>
+    <h3 class="content-title">All Books</h3>
+
+    <app-book-list [books]="booksInfo"></app-book-list>
+</main>
