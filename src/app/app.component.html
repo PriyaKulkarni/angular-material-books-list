@@ -1,34 +1,5 @@
 <mat-sidenav-container fxFlexFill class="root-container" autosize>
   <mat-sidenav class="side-nav" [ngClass]="{'expanded' : isExpanded}" [mode]=mode opened="true">
-    <!-- <mat-nav-list>
-      <mat-list-item>
-        <button mat-icon-button (click)="isExpanded = !isExpanded">
-          <mat-icon style="padding-right:0.4em">notes</mat-icon>
-          <span *ngIf="isExpanded">MENU</span>
-        </button>
-      </mat-list-item>
-      <mat-list-item (click)="showSubmenu = !showSubmenu" *ngIf="isExpanded">
-        <button mat-icon-button>
-          <mat-icon>dashboard</mat-icon>
-          CONTENT MANAGEMENT
-          <mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}">expand_more</mat-icon>
-        </button>
-      </mat-list-item>
-      <div class="submenu" [ngClass]="{'expanded' : showSubmenu}" *ngIf="showSubmenu && isExpanded">
-        <a mat-list-item href="">Sub-content 1</a>
-        <a mat-list-item href="">Sub-content 2</a>
-      </div>
-      <mat-list-item *ngIf="isExpanded">
-        <button mat-icon-button>
-          <mat-icon>tab</mat-icon>
-          COURSES
-        </button>
-      </mat-list-item>
-    </mat-nav-list>
-  </mat-sidenav> -->
-    <!-- <mat-sidenav-container fxFlexFill class="example-container"> -->
-    <!-- <mat-sidenav color="primary" #sidenav fxLayout="column" mode="side"  opened="true" fxHide.gt-sm="true"> -->
-
     <mat-nav-list>
       <mat-list-item (click)="isExpanded = !isExpanded">
         <mat-icon mat-list-icon>notes</mat-icon>
@@ -52,8 +23,8 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar>
-      <h2>atom</h2>
+    <mat-toolbar fxLayout="row">
+        <img fxFlex="0 0 10%" src="../assets/atom-logo.png" alt="Logo"/>
     </mat-toolbar>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
